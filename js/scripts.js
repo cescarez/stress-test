@@ -1,6 +1,14 @@
-var warningCheck = function(stressSigns) {
+var warningCheck = function(stressSigns, healthWhatever, coping) {
   if (stressSigns > 4) {
-    $("span#stressRecommendations").show();
+    $("div#stressRecommendations").show();
+  }
+
+  if (healthWhatever > 2) {
+    $("div#healthRecommendations").show();
+  }
+  
+  if (coping > 3) {
+    $("div#GoodJob").show();
   }
 }
 
@@ -26,6 +34,6 @@ $(document).ready(function() {
     console.log("This is stress sum: " + stressWarningSign);
     console.log("This is Health Symptom sum: " + healthSymptoms);
     console.log("This is Coping Method sum: " + copingMethods);
-    warningCheck(stressWarningSign);
+    warningCheck(stressWarningSign, healthSymptoms, copingMethods);
   });
 });
