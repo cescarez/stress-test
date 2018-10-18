@@ -1,14 +1,33 @@
 var warningCheck = function(stressSigns, healthWhatever, coping) {
   if (stressSigns > 4) {
     $("div#stressRecommendations").show();
+    $("div#stress-responses").show();
   }
 
   if (healthWhatever > 2) {
     $("div#healthRecommendations").show();
+    $("div#stress-responses").show();
   }
-  
+
   if (coping > 3) {
     $("div#GoodJob").show();
+    $("div#stress-responses").show();
+  }
+
+  if (stressSigns <= 4) {
+    $("div#stressRecommendations").hide();
+  }
+
+  if (healthWhatever <= 2) {
+    $("div#healthRecommendations").hide();
+  }
+
+  if (coping <= 3) {
+    $("div#GoodJob").hide();
+  }
+
+  if (stressSigns <= 4 && healthWhatever <= 2 && coping <= 3) {
+    $("div#stress-responses").hide();
   }
 }
 
