@@ -1,3 +1,9 @@
+var warningCheck = function(stressSigns) {
+  if (stressSigns > 4) {
+    $("span#stressRecommendations").show();
+  }
+}
+
 $(document).ready(function() {
   $("form#stress_survey").submit(function(event) {
     event.preventDefault();
@@ -20,5 +26,6 @@ $(document).ready(function() {
     console.log("This is stress sum: " + stressWarningSign);
     console.log("This is Health Symptom sum: " + healthSymptoms);
     console.log("This is Coping Method sum: " + copingMethods);
+    warningCheck(stressWarningSign);
   });
 });
